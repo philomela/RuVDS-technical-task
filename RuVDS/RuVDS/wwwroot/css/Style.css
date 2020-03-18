@@ -1,0 +1,75 @@
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+body {
+    background: #e9f0f5;
+}
+
+table {
+	border: 1px solid black;
+    width: 100%;
+}
+
+tr, td {
+	border: 1px solid black;
+    min-width: 200px;
+}
+
+.wrapper {
+	width: 860px;
+	margin: 0 auto;
+}
+
+.table-servers {
+	width: 100%;
+	margin: 0 auto;
+}
+
+.common-info {
+    border: 1px solid black;
+}
+
+.servers-info {
+	margin: 0 auto;
+    width: 100%;
+}
+
+.btn-add {
+    width: 286px;
+    height: 25px;
+    float: left;
+    background: #0398fc;
+    font-size:13px;
+    border-radius: 20px;
+}
+
+.btn-remove {
+    width: 286px;
+    height: 25px;
+    background: #0398fc;
+    font-size: 13px;
+    float: left;
+    border-radius: 20px;
+}
+
+.btn-del {
+    width: 286px;
+    height: 25px;
+    background: #0398fc;
+    font-size: 13px;
+    float: left;
+    border-radius: 20px;
+}
+.onRemoved {
+    background-color: rgb(234,240,245);
+    text-align: center;
+}
+
+.value-total-usageTime p {
+    color: white;
+    display: inline;
+    background-color: rgb(86, 135, 91);
+}

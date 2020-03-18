@@ -1,0 +1,59 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="~/css/Style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script async src="~/js/site.js"></script>
+    <script src="~/js/json2.js"></script>
+    <title></title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="table-servers">
+            <div class="header-table">RuVDS - Solovyev Roman</div>
+            <div class="control-panel clearfix">
+                <button class="btn-add">Add new server</button>
+                <button class="btn-del">Delete all servers</button>
+                <button class="btn-remove">Remove selected servers</button>
+            </div>
+            <div class="body-table">
+                <div class="common-info">
+                    <div class="current-datetime">Current date:</div>
+                    <div class="value-current-datetime">@DateTime.Now.ToString("dd.MM.yyyy")</div>
+                    <div class="total-usageTime">Total usage time:</div>
+                    <div class="value-total-usageTime"><p>@ViewBag.totalUsageTime</p></div>
+                </div>
+                <div class="servers-info">
+
+                    <table>
+                        <tr>
+                            <th>VirtualServerId</th>
+                            <th>CreateDateTime</th>
+                            <th>RemoveDateTime</th>
+                            <th>SelectedForRemove</th>
+                        </tr>
+                        @foreach (var a in @ViewBag.result)
+                        {
+                            <tr id="server-@a.Id">
+
+                                <td class="server-id">@a.Id</td>
+                                <td>@a.create_datetime.ToString("dd.MM.yyyy:hh:mm:ss")</td>
+                                <td class="remove-datetime">@a.remove_datetime?.ToString("dd.MM.yyyy:hh:mm:ss")</td>
+                                <td class="onRemoved"></td>
+
+                            </tr>
+                        }
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
